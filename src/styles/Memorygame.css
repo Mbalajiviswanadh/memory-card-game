@@ -1,0 +1,131 @@
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    gap: 10px;
+    margin: 16px 0px;
+}
+.remaining-cards-heading {
+    text-align: center;
+    margin: 16px 0;
+  }
+  
+  .remaining-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0;
+  }
+  
+  .remaining-card-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+
+.card-box{
+    background-color:rgb(141, 78, 141) ;
+    border: 1px solid rgb(255, 255, 255);
+    width: 150px;
+    height: 200px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all linear 0.2s;
+    transform: rotate3d(0,1,0, 180deg);
+    overflow: hidden;
+
+}
+    
+.card-box:hover{
+    cursor: pointer;
+    transform: rotate3d(0,1,0,180deg) translate(-4px,-4px);
+}
+
+.card-box.flipped{
+    transform: unset;
+    transform-style: preserve-3d;
+}
+
+.backside{
+    background-color: rgb(141, 78, 141);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5%;
+}
+.flipped .backside{
+    transform: rotate3d(0,1,0, 180deg);
+
+}
+.fotter p{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+.fotter a{
+    text-decoration: none;
+    color: rgb(213, 131, 222);
+}
+.fotter a:hover{
+    color: white;
+}
+.fotter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+.fotter-img{
+   margin-top: -20px;
+}
+.fotter-matter {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+@media (max-width: 768px) {
+    .cards {
+      grid-template-columns: repeat(5, 1fr);
+    
+    }
+    .remaining-cards img{
+        width: 50px;
+        height: auto;
+    }
+    .card-box {
+      width: 100%;
+      height: 100px;
+    
+    }
+    .cards img {
+        width: 80%;
+        height: auto;
+    
+    }  
+    .fotter p{
+        font-size: 10px;
+    }  
+  }
+   
+
+  @media (max-width: 768px) {
+    .fotter {
+      flex-direction: row;
+      text-align: center;
+    }
+  
+    .fotter-img {
+      margin-top: 10px;
+    }
+    .fotter-img img{
+        width: 80%;
+        margin-top: 20px;
+    }
+  }
