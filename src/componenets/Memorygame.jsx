@@ -72,7 +72,7 @@ import { Link } from "react-router-dom";
                
                {remainingCards.length === 0 && (
                 <div className="pixel2">
-                <Link to='/memorygame' onClick={playAgain}>
+                <Link to='/' onClick={playAgain}>
                 <span style={{ color: 'white' }}>PLAY AGAIN</span>
           </Link>
           </div>
