@@ -25,7 +25,7 @@ To run this project
 
 
 ## Deployment Link
-**Game** : https://memory-card-game-4jk6azp7r-balajis-projects-fb4ff9c4.vercel.app/
+**Game** : https://memory-card-game-roan.vercel.app/
 
 ---
  **React + Vite**
