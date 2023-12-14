@@ -1,6 +1,7 @@
     import React,{useRef, useState} from "react";
     import '../styles/Memorygame.css';
     import catlogo from '../images/catlogo.png';
+import { Link } from "react-router-dom";
     function shuffle(array){  
         let currentIndex = array.length , randomIndex;
 
@@ -55,12 +56,28 @@
                 setSecondCard(defaultState);
             },1000); 
         };
+        const playAgain = () => {
+            // Reset the game state
+            setMoves(0);
+            setFirstCard(defaultState);
+            setSecondCard(defaultState);
+            setRemainingCards(items);
+          };
 
 
         return (
             <>
             <div className="body-memo">
                <h1> {remainingCards.length > 0 ? "Cards to Find" : "GAME OVER!  WELL DONE👏"}
+               
+               {remainingCards.length === 0 && (
+                <div className="pixel2">
+                <Link to='/memorygame' onClick={playAgain}>
+                <span style={{ color: 'white' }}>PLAY AGAIN</span>
+          </Link>
+          </div>
+        )}
+
                
                <div className="remaining-cards">
                     {remainingCards.map((card, index) => {
@@ -87,6 +104,7 @@
                 })}
                 </div>
                 <h2>Moves Used : <span style={{color:'rgb(213, 131, 222)'}}>{moves}</span></h2>
+                
                 <div className="fotter">
                 <div className="fotter-matter">
                 <p style={{ textAlign: 'center', margin: '16px',letterSpacing: '2px' }}>Made with ❤️ by Balaji viswanadh</p>
